@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.community.dao.PhoneDao">
+
+<!--    <insert id="register" parameterMap="com.example.community.bean.Older" >-->
+<!--        INSERT ph_older-->
+<!--        (username,password,sex,phone,age)-->
+<!--        VALUES-->
+<!--            (#{username},#{password},#{sex},#{phone},#{age})-->
+<!--    </insert>-->
+    <!--    获取详情-->
+    <select id="getOlderById" parameterType="com.example.community.bean.Older" resultType="com.example.community.bean.Older">
+        SELECT a.id,a.user_id AS userId,a.older_name AS olderName,a.sex,a.older_age AS olderAge,a.birthday,a.communityCd,a.medical_history AS medicalHistory,b.community_place AS address,a.photo,b.community_name AS communityName
+        FROM tb_older a
+                 LEFT JOIN tb_communities b
+                           ON a.communityCd = b.community_code
+                 LEFT JOIN tb_user c
+                           ON a.user_id = c.id
+        WHERE a.id = #{id}
+    </select>
+    <!--    修改状态-->
+
+
+
+</mapper>

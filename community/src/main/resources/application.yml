@@ -1,0 +1,24 @@
+# mysql
+spring:
+  datasource:
+    #MySQL配置
+    driverClassName:  com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/communitypension?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC&allowMultiQueries=true
+    username: root
+    password: 123456
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.community.bean
+server:
+  port: 9001
+
+servlet:
+  multipart:
+    # 单个文件大小
+    max-file-size:  10MB
+    # 设置总上传的文件大小
+    max-request-size:  100MB
+
+hong:
+  path: D:\秃头\毕设\Community_Management_System-main\community-web-vue\community\src\assets\
